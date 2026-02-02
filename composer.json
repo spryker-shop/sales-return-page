@@ -8,7 +8,7 @@
         "spryker-shop/barcode-widget": "^1.0.0",
         "spryker-shop/customer-reorder-widget-extension": "^1.2.0",
         "spryker-shop/sales-return-page-extension": "^1.0.0",
-        "spryker-shop/shop-ui": "^1.40.0",
+        "spryker-shop/shop-ui": "^1.101.0",
         "spryker/application": "^3.8.0",
         "spryker/customer": "^7.19.0",
         "spryker/kernel": "^3.52.0",
