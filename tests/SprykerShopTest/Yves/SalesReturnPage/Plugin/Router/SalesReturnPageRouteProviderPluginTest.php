@@ -78,9 +78,6 @@ class SalesReturnPageRouteProviderPluginTest extends Unit
         }
     }
 
-    /**
-     * @return array
-     */
     public function referenceProvider(): array
     {
         return [

@@ -18,20 +18,11 @@ class ReturnReader implements ReturnReaderInterface
      */
     protected $salesReturnClient;
 
-    /**
-     * @param \SprykerShop\Yves\SalesReturnPage\Dependency\Client\SalesReturnPageToSalesReturnClientInterface $salesReturnClient
-     */
     public function __construct(SalesReturnPageToSalesReturnClientInterface $salesReturnClient)
     {
         $this->salesReturnClient = $salesReturnClient;
     }
 
-    /**
-     * @param string $returnReference
-     * @param string $customerReference
-     *
-     * @return \Generated\Shared\Transfer\ReturnTransfer|null
-     */
     public function findReturnByReference(string $returnReference, string $customerReference): ?ReturnTransfer
     {
         $returnFilterTransfer = (new ReturnFilterTransfer())

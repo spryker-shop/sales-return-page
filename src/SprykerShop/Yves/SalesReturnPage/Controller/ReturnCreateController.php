@@ -134,11 +134,6 @@ class ReturnCreateController extends AbstractReturnController
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ReturnResponseTransfer $returnResponseTransfer
-     *
-     * @return void
-     */
     protected function handleResponseErrors(ReturnResponseTransfer $returnResponseTransfer): void
     {
         foreach ($returnResponseTransfer->getMessages() as $messageTransfer) {

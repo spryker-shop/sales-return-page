@@ -64,11 +64,6 @@ class ReturnCreateFormDataProvider
         $this->returnSearchClient = $returnSearchClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return array
-     */
     public function getData(OrderTransfer $orderTransfer): array
     {
         $returnCreateFormData = [
@@ -88,11 +83,6 @@ class ReturnCreateFormDataProvider
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return array
-     */
     protected function createReturnItemTransfersCollection(OrderTransfer $orderTransfer): array
     {
         $returnItemsList = [];
@@ -108,9 +98,6 @@ class ReturnCreateFormDataProvider
         return $returnItemsList;
     }
 
-    /**
-     * @return array
-     */
     protected function prepareReturnReasonChoices(): array
     {
         $returnReasonSearchResponse = $this->returnSearchClient->searchReturnReasons((new ReturnReasonSearchRequestTransfer()));
@@ -131,11 +118,6 @@ class ReturnCreateFormDataProvider
         return $returnReasonChoices;
     }
 
-    /**
-     * @param array $returnCreateFormData
-     *
-     * @return array
-     */
     protected function executeReturnCreateFormHandlerPlugins(array $returnCreateFormData): array
     {
         foreach ($this->returnCreateFormHandlerPlugins as $returnCreateFormHandlerPlugin) {

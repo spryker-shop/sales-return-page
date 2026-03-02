@@ -31,11 +31,6 @@ use Symfony\Component\Form\FormInterface;
  */
 class SalesReturnPageFactory extends AbstractFactory
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function getCreateReturnForm(OrderTransfer $orderTransfer): FormInterface
     {
         $returnCreateFormDataProvider = $this->createReturnCreateFormDataProvider();
@@ -47,9 +42,6 @@ class SalesReturnPageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\SalesReturnPage\Form\Handler\ReturnHandlerInterface
-     */
     public function createReturnHandler(): ReturnHandlerInterface
     {
         return new ReturnHandler(
@@ -60,9 +52,6 @@ class SalesReturnPageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\SalesReturnPage\Form\DataProvider\ReturnCreateFormDataProvider
-     */
     public function createReturnCreateFormDataProvider(): ReturnCreateFormDataProvider
     {
         return new ReturnCreateFormDataProvider(
@@ -72,17 +61,11 @@ class SalesReturnPageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\SalesReturnPage\Reader\ReturnReaderInterface
-     */
     public function createReturnReader(): ReturnReaderInterface
     {
         return new ReturnReader($this->getSalesReturnClient());
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormFactory
-     */
     public function getFormFactory(): FormFactory
     {
         return $this->getProvidedDependency(ApplicationConstants::FORM_FACTORY);
@@ -96,57 +79,36 @@ class SalesReturnPageFactory extends AbstractFactory
         return $this->getProvidedDependency(SalesReturnPageDependencyProvider::PLUGINS_RETURN_CREATE_FORM_HANDLER);
     }
 
-    /**
-     * @return \SprykerShop\Yves\SalesReturnPage\Dependency\Client\SalesReturnPageToSalesReturnClientInterface
-     */
     public function getSalesReturnClient(): SalesReturnPageToSalesReturnClientInterface
     {
         return $this->getProvidedDependency(SalesReturnPageDependencyProvider::CLIENT_SALES_RETURN);
     }
 
-    /**
-     * @return \SprykerShop\Yves\SalesReturnPage\Dependency\Client\SalesReturnPageToSalesClientInterface
-     */
     public function getSalesClient(): SalesReturnPageToSalesClientInterface
     {
         return $this->getProvidedDependency(SalesReturnPageDependencyProvider::CLIENT_SALES);
     }
 
-    /**
-     * @return \SprykerShop\Yves\SalesReturnPage\Dependency\Client\SalesReturnPageToCustomerClientInterface
-     */
     public function getCustomerClient(): SalesReturnPageToCustomerClientInterface
     {
         return $this->getProvidedDependency(SalesReturnPageDependencyProvider::CLIENT_CUSTOMER);
     }
 
-    /**
-     * @return \SprykerShop\Yves\SalesReturnPage\SalesReturnPageConfig
-     */
     public function getModuleConfig(): SalesReturnPageConfig
     {
         return $this->getConfig();
     }
 
-    /**
-     * @return \SprykerShop\Yves\SalesReturnPage\Dependency\Client\SalesReturnPageToStoreClientInterface
-     */
     public function getStoreClient(): SalesReturnPageToStoreClientInterface
     {
         return $this->getProvidedDependency(SalesReturnPageDependencyProvider::CLIENT_STORE);
     }
 
-    /**
-     * @return \SprykerShop\Yves\SalesReturnPage\Dependency\Client\SalesReturnPageToSalesReturnSearchClientInterface
-     */
     public function getSalesReturnSearchClient(): SalesReturnPageToSalesReturnSearchClientInterface
     {
         return $this->getProvidedDependency(SalesReturnPageDependencyProvider::CLIENT_SALES_RETURN_SEARCH);
     }
 
-    /**
-     * @return \SprykerShop\Yves\SalesReturnPage\Sanitizer\ItemSanitizerInterface
-     */
     public function createItemSanitizer(): ItemSanitizerInterface
     {
         return new ItemSanitizer();

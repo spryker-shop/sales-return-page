@@ -17,11 +17,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class ReturnSlipPrintController extends AbstractReturnController
 {
-    /**
-     * @param string $returnReference
-     *
-     * @return \Spryker\Yves\Kernel\View\View
-     */
     public function printAction(string $returnReference): View
     {
         $response = $this->executePrintAction($returnReference);
@@ -58,11 +53,6 @@ class ReturnSlipPrintController extends AbstractReturnController
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ReturnTransfer $returnTransfer
-     *
-     * @return \Generated\Shared\Transfer\ReturnTransfer
-     */
     protected function sortReturnItemByOrderReference(ReturnTransfer $returnTransfer): ReturnTransfer
     {
         $returnTransfer->getReturnItems()->uasort(

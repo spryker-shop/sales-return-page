@@ -27,11 +27,6 @@ class ReturnListController extends AbstractReturnController
      */
     protected const PARAM_PAGE_DEFAULT = 1;
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Spryker\Yves\Kernel\View\View
-     */
     public function listAction(Request $request): View
     {
         $response = $this->executeListAction($request);
@@ -43,11 +38,6 @@ class ReturnListController extends AbstractReturnController
         );
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     protected function executeListAction(Request $request): array
     {
         $returnCollectionTransfer = $this->getFactory()
@@ -60,11 +50,6 @@ class ReturnListController extends AbstractReturnController
         ];
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\ReturnFilterTransfer
-     */
     protected function createReturnFilterTransfer(Request $request): ReturnFilterTransfer
     {
         $page = $request->query->getInt(static::PARAM_PAGE, static::PARAM_PAGE_DEFAULT);

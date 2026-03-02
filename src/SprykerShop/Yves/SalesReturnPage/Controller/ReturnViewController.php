@@ -16,11 +16,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class ReturnViewController extends AbstractReturnController
 {
-    /**
-     * @param string $returnReference
-     *
-     * @return \Spryker\Yves\Kernel\View\View
-     */
     public function viewAction(string $returnReference): View
     {
         $response = $this->executeViewAction($returnReference);

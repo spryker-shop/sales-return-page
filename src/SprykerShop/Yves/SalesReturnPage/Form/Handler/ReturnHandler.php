@@ -71,11 +71,6 @@ class ReturnHandler implements ReturnHandlerInterface
         $this->returnCreateFormHandlerPlugins = $returnCreateFormHandlerPlugins;
     }
 
-    /**
-     * @param array $returnItemsList
-     *
-     * @return \Generated\Shared\Transfer\ReturnResponseTransfer
-     */
     public function createReturn(array $returnItemsList): ReturnResponseTransfer
     {
         $returnItemData = $returnItemsList[ReturnCreateForm::FIELD_RETURN_ITEMS] ?? [];
@@ -90,11 +85,6 @@ class ReturnHandler implements ReturnHandlerInterface
         return $this->createErrorReturnResponse(static::GLOSSARY_KEY_CREATE_RETURN_SELECTED_ITEMS_ERROR);
     }
 
-    /**
-     * @param string $message
-     *
-     * @return \Generated\Shared\Transfer\ReturnResponseTransfer
-     */
     protected function createErrorReturnResponse(string $message): ReturnResponseTransfer
     {
         $messageTransfer = (new MessageTransfer())
@@ -105,11 +95,6 @@ class ReturnHandler implements ReturnHandlerInterface
             ->addMessage($messageTransfer);
     }
 
-    /**
-     * @param array $returnItemData
-     *
-     * @return \Generated\Shared\Transfer\ReturnCreateRequestTransfer
-     */
     protected function createReturnCreateRequestTransfer(array $returnItemData): ReturnCreateRequestTransfer
     {
         $returnItemTransfersCollection = new ArrayObject();
@@ -136,12 +121,6 @@ class ReturnHandler implements ReturnHandlerInterface
         return $returnCreateRequestTransfer;
     }
 
-    /**
-     * @param array $returnItemsList
-     * @param \Generated\Shared\Transfer\ReturnCreateRequestTransfer $returnCreateRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ReturnCreateRequestTransfer
-     */
     protected function executeReturnCreateFormHandlerPlugins(
         array $returnItemsList,
         ReturnCreateRequestTransfer $returnCreateRequestTransfer

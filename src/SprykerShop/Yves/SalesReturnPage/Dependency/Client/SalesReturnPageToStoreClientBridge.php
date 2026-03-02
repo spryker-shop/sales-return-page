@@ -24,9 +24,6 @@ class SalesReturnPageToStoreClientBridge implements SalesReturnPageToStoreClient
         $this->storeClient = $storeClient;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     public function getCurrentStore(): StoreTransfer
     {
         return $this->storeClient->getCurrentStore();

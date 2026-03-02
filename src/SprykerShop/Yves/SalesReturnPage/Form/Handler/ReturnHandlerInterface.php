@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\ReturnResponseTransfer;
 
 interface ReturnHandlerInterface
 {
-    /**
-     * @param array $returnItemsList
-     *
-     * @return \Generated\Shared\Transfer\ReturnResponseTransfer
-     */
     public function createReturn(array $returnItemsList): ReturnResponseTransfer;
 }

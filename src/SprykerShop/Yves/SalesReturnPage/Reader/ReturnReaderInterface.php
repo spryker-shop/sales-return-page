@@ -11,11 +11,5 @@ use Generated\Shared\Transfer\ReturnTransfer;
 
 interface ReturnReaderInterface
 {
-    /**
-     * @param string $returnReference
-     * @param string $customerReference
-     *
-     * @return \Generated\Shared\Transfer\ReturnTransfer|null
-     */
     public function findReturnByReference(string $returnReference, string $customerReference): ?ReturnTransfer;
 }

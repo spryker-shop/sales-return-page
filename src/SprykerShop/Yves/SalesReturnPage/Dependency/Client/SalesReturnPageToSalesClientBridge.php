@@ -25,11 +25,6 @@ class SalesReturnPageToSalesClientBridge implements SalesReturnPageToSalesClient
         $this->salesClient = $salesClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderListRequestTransfer $orderListRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderListTransfer
-     */
     public function getOffsetPaginatedCustomerOrderList(OrderListRequestTransfer $orderListRequestTransfer): OrderListTransfer
     {
         return $this->salesClient->getOffsetPaginatedCustomerOrderList($orderListRequestTransfer);
