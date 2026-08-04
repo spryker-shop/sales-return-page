@@ -4,8 +4,6 @@ export default class OrderButtonsDisableToggler extends Component {
     protected triggers: HTMLInputElement[];
     protected targets: HTMLElement[];
 
-    protected readyCallback(): void {}
-
     protected init(): void {
         this.triggers = <HTMLInputElement[]>Array.from(document.getElementsByClassName(this.triggerClassName));
         this.targets = <HTMLElement[]>Array.from(document.getElementsByClassName(this.targetClassName));
